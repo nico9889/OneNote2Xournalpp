@@ -29,13 +29,10 @@ class Layer:
         bound = Boundaries(0, 0, 0, 0)
         for stroke in self._strokes:
             bound = bound.max(stroke.get_boundaries())
-        print(bound)
         for image in self._images:
             bound = bound.max(image.get_boundaries())
-        print(bound)
         for text in self._texts:
             bound = bound.max(text.get_boundaries())
-        print(bound)
         return bound
 
     def to_xml(self):
